@@ -1,5 +1,35 @@
 const experiences = [
   {
+    company: "Australian Nonprofit",
+    logo: "/assets/healthyhabitshub-logo.png",
+    roles: [
+      {
+        title: "WordPress + Content Virtual Assistant",
+        date: "Oct 2025 – Present",
+        bullets: [
+          "Developed and maintained WordPress website, handling all technical aspects including plugin management, troubleshooting, and responsive design, while collaborating with international team members to align project goals.",
+          "Designed logos and established brand identity using Figma and Canva, ensuring a cohesive visual presence across digital platforms and coordinating with stakeholders for consistent implementation.",
+          "Planned and managed content workflows, including social media calendars, short-form video creation, SEO, and website analytics, maintaining clear communication across global teams."
+        ]
+      }
+    ]
+  },
+  {
+    company: "Live Church Network",
+    logo: "/assets/lcn-logo.webp",
+    roles: [
+      {
+        title: "WordPress Technical Specialist",
+        date: "Oct 2025 - Present",
+        bullets: [
+          "Optimized and customized existing WordPress site performance, troubleshooting plugins, PHP code, and hosting issues while collaborating closely with international clients to meet their requirements.",
+          "Enhanced UI/UX and implemented design improvements, ensuring responsive and visually consistent layouts across devices.",
+          "Managed content and technical workflows, including GoDaddy hosting, FileZilla file transfers, and GeoDirectory plugin configurations, communicating progress effectively with clients."
+      ]
+      }
+    ]
+  },
+  {
     company: "Dsignable",
     logo: "assets/dsignable_logo.jpeg",
     roles: [
@@ -20,7 +50,7 @@ const experiences = [
     roles: [
       {
         title: "Web Developer",
-        date: "Sept 2025 – Present",
+        date: "Sept 2025 – October 2025",
         bullets: [
           "Integrated PayMongo payment gateway into WooCommerce, enabling secure and frictionless checkout for customers.",
           "Developed a dynamic shipping calculator to provide real-time cost estimates, improving conversion rates and reducing cart abandonment."
@@ -34,7 +64,7 @@ const experiences = [
     roles: [
       {
         title: "Business Systems Engineer",
-        date: "Aug 2025 – Present",
+        date: "Aug 2025 – October 2025",
         bullets: [
           "Developed a centralized business system using Notion to unify operations, streamline workflows, and improve internal visibility.",
           "Redesigned and optimized database structures for client management, process tracking, and executive reporting dashboards.",
@@ -80,6 +110,7 @@ const experiences = [
     ]
   }
 ];
+
 
 
 const container = document.getElementById("experience-timeline");
