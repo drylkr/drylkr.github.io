@@ -7,25 +7,11 @@ const experiences = [
         title: "WordPress + Content Virtual Assistant",
         date: "Oct 2025 – Present",
         bullets: [
-          "Developed and maintained WordPress website, handling all technical aspects including plugin management, troubleshooting, and responsive design, while collaborating with international team members to align project goals.",
-          "Designed logos and established brand identity using Figma and Canva, ensuring a cohesive visual presence across digital platforms and coordinating with stakeholders for consistent implementation.",
-          "Planned and managed content workflows, including social media calendars, short-form video creation, SEO, and website analytics, maintaining clear communication across global teams."
+          "Developed and optimized WordPress websites using PHP, HTML/CSS, Elementor, child theme, Rank Math, Google Search Console, and Analytics, improving SEO visibility and site performance.",
+          "Managed full web operations through cPanel and SFTP/FTP including troubleshooting, plugin management, and content integration.",
+          "Created cohesive brand designs in Figma and Affinity ensuring consistent visuals across digital platforms.",
+          "Centralized project management and workflow organization in Notion, leading to a more productive team environment."
         ]
-      }
-    ]
-  },
-  {
-    company: "Live Church Network",
-    logo: "/assets/lcn-logo.webp",
-    roles: [
-      {
-        title: "WordPress Technical Specialist",
-        date: "Oct 2025 - Present",
-        bullets: [
-          "Optimized and customized existing WordPress site performance, troubleshooting plugins, PHP code, and hosting issues while collaborating closely with international clients to meet their requirements.",
-          "Enhanced UI/UX and implemented design improvements, ensuring responsive and visually consistent layouts across devices.",
-          "Managed content and technical workflows, including GoDaddy hosting, FileZilla file transfers, and GeoDirectory plugin configurations, communicating progress effectively with clients."
-      ]
       }
     ]
   },
@@ -37,10 +23,25 @@ const experiences = [
         title: "Full Stack Developer",
         date: "June 2025 – Present",
         bullets: [
-          "Built and maintained cross-platform mobile features with React Native, Figma, and Expo, delivering seamless user experiences across devices.",
-          "Designed and managed backend services with Firebase Firestore, including authentication, database structure, and serverless functions to support scalable growth.",
-          "Facilitated async collaboration across international team members using Slack, Notion, GitHub, and Loom for smooth communication and documentation."
+          "Built and maintained cross-platform mobile features with React Native and Expo.",
+          "Developed backend services with Firebase, handling authentication, data management, and cloud functions.",
+          "Integrated Stripe for payments and Mapbox for maps, while conducting QA testing and bug fixes across multiple active projects.",
+          "Collaborated asynchronously with international teams using Slack, Notion, GitHub, and Loom for smooth communication and workflow alignment."
         ]
+      }
+    ]
+  },
+  {
+    company: "Live Church Network",
+    logo: "/assets/lcn-logo.webp",
+    roles: [
+      {
+        title: "WordPress Technical Specialist",
+        date: "Oct 2025",
+        bullets: [
+          "Optimized and customized an existing WordPress site, troubleshooting plugins, PHP code, and hosting issues via SFTP/FTP, FileZilla, and GoDaddy.",
+          "Enhanced UI/UX consistency and responsiveness across devices through design refinements and testing."
+      ]
       }
     ]
   },
@@ -52,8 +53,7 @@ const experiences = [
         title: "Web Developer",
         date: "Sept 2025 – October 2025",
         bullets: [
-          "Integrated PayMongo payment gateway into WooCommerce, enabling secure and frictionless checkout for customers.",
-          "Developed a dynamic shipping calculator to provide real-time cost estimates, improving conversion rates and reducing cart abandonment."
+          "Integrated PayMongo payment gateway into WooCommerce, enabling frictionless checkout for customers.",
         ]
       }
     ]
@@ -66,18 +66,18 @@ const experiences = [
         title: "Business Systems Engineer",
         date: "Aug 2025 – October 2025",
         bullets: [
-          "Developed a centralized business system using Notion to unify operations, streamline workflows, and improve internal visibility.",
-          "Redesigned and optimized database structures for client management, process tracking, and executive reporting dashboards.",
-          "Automated repetitive tasks via Make (formerly Integromat), integrating Slack, Calendly, and Google Drive to reduce manual work and boost team productivity."
+          "Built a centralized business management system using Notion to unify client and internal operations.",
+          "Created custom automations using Make (Integromat) to reduce manual work and support team communication.",
+          "Integrated Slack, Calendly, and Google Drive for collaboration and scheduling."
         ]
       },
       {
         title: "WordPress Developer",
         date: "Mar 2025 – Jul 2025",
         bullets: [
-          "Delivered a responsive WordPress website using Elementor, translating Figma designs into a polished live product.",
-          "Configured plugins, SEO tools, and custom CSS to improve site performance, search ranking, and brand consistency.",
-          "Collaborated with internal teams and stakeholders to scope and align future development initiatives."
+          "Delivered a responsive WordPress website using Elementor, translating Figma designs into a live product.",
+          "Configured plugins such as Yoast SEO, and custom CSS to improve accessibility and search ranking.",
+          "Led the entire project lifecycle while aligning with stakeholders on project goals and timelines."
         ]
       }
     ]
@@ -87,11 +87,11 @@ const experiences = [
     logo: "assets/se_logo.png",
     roles: [
       {
-        title: "Applications Engineer Intern",
+        title: "Applications Engineer (Intern)",
         date: "Feb 2024 – May 2024",
         bullets: [
-          "Built a quiz-based certification system and internal messaging web app alongside fellow interns, improving employee training engagement.",
-          "Developed role-based login views with Vue.js, PHP, and Bootstrap, ensuring secure and personalized access to internal tools."
+          "Developed a quiz-based certification system to increase employee training engagement using Vue.js, PHP, HTML/CSS, Bootstrap, and MSSQL.",
+          "Built and launched an internal communication platform used to support a key organizational event."
         ]
       }
     ]
