@@ -1,6 +1,6 @@
 const experiences = [
   {
-    company: "Australian Nonprofit",
+    company: "Nonprofit Organization",
     logo: "/assets/healthyhabitshub-logo.png",
     roles: [
       {
