@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="color-circle" style="background-color: rgba(201, 201, 201, 1);"></div>
         <div class="color-circle" style="background-color: var(--text-light)"></div>
         <div class="color-circle" style="background-color: var(--text-dark"></div>
-        <div class="color-circle" style="background-color: var(--keyword-green-text);"></div>
+        <div class="color-circle" style="background-color: var(--accent-pink);"></div>
       </div>
 
       <div class="footer-right">
