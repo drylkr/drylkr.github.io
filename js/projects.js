@@ -8,7 +8,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://meditate.com.au",
 		colorKey: "blue",
-		tech: ["WordPress", "PHP", "HTML/CSS"]
 	},
 	{
 		title: "Sync My Ride",
@@ -16,7 +15,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://syncmyrideapp.com",
 		colorKey: "blue",
-		tech: ["React Native", "Expo", "Firebase"]
 	},
 	{
 		title: "Australian Public Interest Alliance Inc. (APIA)",
@@ -24,7 +22,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://apia.org.au",
 		colorKey: "red",
-		tech: ["WordPress", "HTML/CSS"]
 	},
 	{
 		title: "SpendHer Hotline",
@@ -32,7 +29,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://spendherapp.com",
 		colorKey: "purple",
-		tech: ["React Native", "Firebase", "Stripe"]
 	},
 	{
 		title: "MyTassel",
@@ -40,7 +36,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://mytassel.com",
 		colorKey: "green",
-		tech: ["Web", "HTML/CSS", "JavaScript"]
 	},
 	{
 		title: "Lyfbiz Solutions",
@@ -48,7 +43,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://lyfbizsolutions.com",
 		colorKey: "orange",
-		tech: ["WordPress", "Elementor"]
 	},
 	{
 		title: "Finance Tracker",
@@ -56,7 +50,6 @@ const projects = [
 		githubLink: "https://github.com/drylkr/finance-tracker",
 		projectLink: "https://finance-tracker-steel-alpha.vercel.app",
 		colorKey: "yellow",
-		tech: ["React", "Node.js", "SQL"]
 	},
 	// GridStats (temporarily hidden)
 	// {
