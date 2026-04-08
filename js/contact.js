@@ -1,9 +1,7 @@
-// contact.js — obfuscate email and open mail client via constructed mailto
 (function(){
   function makeEmail() {
-    // build email from char codes to avoid raw string in HTML
-    const local = [111,110,103,100,97,114,121,108,48,49]; // "ongdaryl01"
-    const domain = [103,109,97,105,108,46,99,111,109]; // "gmail.com"
+    const local = [111,110,103,100,97,114,121,108,48,49];
+    const domain = [103,109,97,105,108,46,99,111,109];
     const localStr = String.fromCharCode(...local);
     const domainStr = String.fromCharCode(...domain);
     return `${localStr}@${domainStr}`;
@@ -17,7 +15,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Toast helper (creates element on first use)
     function showToast(message) {
       let toast = document.getElementById('site-toast');
       if (!toast) {
@@ -36,7 +33,6 @@
     if (!btn) return;
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      // show a small modal giving options (open email client or copy email)
       const backdrop = document.createElement('div'); backdrop.className = 'modal-backdrop';
       const modal = document.createElement('div'); modal.className = 'modal';
       modal.innerHTML = `

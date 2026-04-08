@@ -1,6 +1,4 @@
-// hero.js — typewriter + lightweight particles
 (function(){
-  // Typewriter for the Software Engineer label (one-time)
   const animEl = document.getElementById('title-anim');
   if (animEl) {
     const target = 'Software Engineer';
@@ -11,11 +9,8 @@
       if (ch >= target.length) clearInterval(interval);
     }, 80);
   }
-  // Typewriter only: disable particle/bubble rendering
-  // (bubbles removed per user request)
   return;
 
-  // Ensure a full-screen canvas exists so the bubbles show across all pages
   let canvas = document.getElementById('hero-particles');
   if (!canvas) {
     const wrap = document.createElement('div');
@@ -23,7 +18,6 @@
     canvas = document.createElement('canvas');
     canvas.id = 'hero-particles';
     wrap.appendChild(canvas);
-    // insert at document start so it's behind content
     document.body.insertBefore(wrap, document.body.firstChild);
   }
   const ctx = canvas.getContext('2d');
@@ -44,7 +38,6 @@
   window.addEventListener('resize', resize);
 
   const particles = [];
-  // particle count based on viewport area
   function initParticles() {
     particles.length = 0;
     const area = window.innerWidth * window.innerHeight;
