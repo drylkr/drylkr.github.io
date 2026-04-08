@@ -16,7 +16,7 @@
         <ul class="nav-links">
         <li><a href="index.html" class="active">/index</a></li>
         <li><a href="experience.html">experience</a></li>
-        <!-- <li><a href="projects.html">projects</a></li> -->
+        <li><a href="projects.html">projects</a></li>
         </ul>
     </nav>
   </header>
@@ -25,28 +25,31 @@
 
     <!-- About Section -->
     <section class="about">
+      <div class="hero-canvas-wrap">
+        <canvas id="hero-particles" aria-hidden="true"></canvas>
+      </div>
       <h1 class="about-name">Daryl Ong</h1>
-      <h2 class="about-title">Software Engineer</h2>
+      <h2 class="about-title"><span id="title-anim" class="title-anim" aria-live="polite"></span></h2>
       <p class="about-description">
-        I am a <span class="keyword red">software engineer</span> with experience building 
-        <span class="keyword orange">web</span> and <span class="keyword yellow">mobile applications</span>. 
-        I enjoy <span class="keyword green">UI/UX design</span>, 
-        <span class="keyword blue">database management</span>, and creating 
-        <span class="keyword purple">business solutions</span> that streamline workflows and 
+        I am a <span class="keyword pink">software engineer</span> with experience building 
+        <span class="keyword pink">web</span> and <span class="keyword pink">mobile applications</span>. 
+        I enjoy <span class="keyword pink">UI/UX design</span>, 
+        <span class="keyword pink">database management</span>, and creating 
+        <span class="keyword pink">business solutions</span> that streamline workflows and 
         make digital experiences cleaner and more efficient.
       </p>
 
       <!-- Contact Buttons -->
       <div class="contact-options">
-        <!-- Mail -->
-        <a href="mailto:ongdaryl01@gmail.com" class="contact-button">
+        <!-- Contact button (obfuscated email revealed via JS) -->
+        <button id="contact-button" class="contact-button">
           <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 
             2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
             4-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          <span class="contact-text">Mail</span>
-        </a>
+          <span class="contact-text">Contact</span>
+        </button>
 
         <!-- GitHub -->
         <a href="https://github.com/drylkr" target="_blank" class="contact-button">
@@ -76,10 +79,23 @@
     </section>
 
     <!-- Project Section -->
-    <section class="projects">
+    <section class="tech-strip">
+      <div class="tech-content">
+        <div class="tech-list">
+          <a class="tech-item">React Native</a>
+          <a class="tech-item">Firebase</a>
+          <a class="tech-item">Expo</a>
+          <a class="tech-item">WordPress</a>
+          <a class="tech-item">Notion</a>
+          <a class="tech-item">SQL</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" data-mode="highlight" data-highlight="MyTassel, SpendHer Hotline, Sync My Ride, Finance Tracker, Australian Public Interest Alliance Inc. (APIA)">
         <div class="projects-header">
           <h2 class="section-title">Projects</h2>
-          <!-- <a href="https://portfolio-topaz-nine-51.vercel.app" class="see-more-btn">View More</a> -->
+          <a href="/projects.html" class="see-more-btn">View More</a>
         </div>
 
       <div class="projects-grid"></div>
@@ -92,17 +108,14 @@
           <!-- Outlined circle info -->
           <svg class="icon-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="infoTitle2">
             <title id="infoTitle2">Info</title>
-            <path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 2.5
+            <path fill="none" stroke="var(--accent-pink-700)" stroke-width="1.6" d="M12 2.5
               A9.5 9.5 0 1 1 12 21.5 9.5 9.5 0 1 1 12 2.5z"/>
-            <rect x="11" y="10" width="2" height="6" fill="currentColor"/>
-            <circle cx="12" cy="8" r="1" fill="currentColor"/>
+            <rect x="11" y="10" width="2" height="6" fill="var(--accent-pink-700)"/>
+            <circle cx="12" cy="8" r="1" fill="var(--accent-pink-700)"/>
           </svg>
 
           <p class="highlight-description">
             I'm always open to collaborating and connecting.
-            <a href="mailto:ongdaryl01@gmail.com" class="highlight-link">
-              <span class="keyword green"><strong>Feel free to reach out!</strong></span>
-            </a>
           </p>
 
         </div>
@@ -116,5 +129,7 @@
 
   <script src="js/footer.js"></script>
   <script src="js/projects.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>
