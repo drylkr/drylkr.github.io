@@ -122,7 +122,7 @@ experiences.forEach(exp => {
   const rolesHTML = (exp.roles || []).map(role => `
     <div class="timeline-header">
       <h3 class="timeline-title">${role.title}</h3>
-      <span class="keyword green timeline-date">${role.date}</span>
+      <span class="keyword pink timeline-date" data-full-date="${role.date}">${role.date}</span>
     </div>
     <div class="timeline-content">
       <ul>
@@ -141,3 +141,80 @@ experiences.forEach(exp => {
 
   container.appendChild(item);
 });
+
+  // Simple reveal on scroll for timeline items
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  },{ threshold: 0.15 });
+
+  document.querySelectorAll('.timeline-item').forEach(node => observer.observe(node));
+// Date condense / restore helpers
+function condenseAllDates() {
+  document.querySelectorAll('.timeline-date').forEach(el => {
+    const full = el.dataset.fullDate || el.textContent || '';
+    const years = (full.match(/\d{4}/g) || []).join(' – ');
+    if (years) el.textContent = years; else el.textContent = full;
+  });
+}
+
+function restoreAllDates() {
+  document.querySelectorAll('.timeline-date').forEach(el => {
+    const full = el.dataset.fullDate;
+    if (full) el.textContent = full;
+  });
+}
+
+// Add toggle buttons (default to condensed for privacy)
+const aboutSection = document.querySelector('.about');
+if (aboutSection) {
+  const controls = document.createElement('div');
+  controls.className = 'about-controls';
+
+  const btnDates = document.createElement('button');
+  btnDates.textContent = 'Show full dates';
+  btnDates.className = 'see-more-btn';
+
+  const btnLogos = document.createElement('button');
+  btnLogos.textContent = 'Hide logos';
+  btnLogos.className = 'see-more-btn';
+
+  controls.appendChild(btnDates);
+  controls.appendChild(btnLogos);
+
+  // insert controls below the about description and left-aligned
+  const desc = aboutSection.querySelector('.about-description');
+  if (desc && desc.parentNode) desc.parentNode.insertBefore(controls, desc.nextSibling);
+  else aboutSection.appendChild(controls);
+
+
+  let condensed = true;
+  // hide logos by default for privacy; button will show them
+  let logosHidden = true;
+
+  btnDates.addEventListener('click', () => {
+    condensed = !condensed;
+    if (condensed) {
+      condenseAllDates();
+      btnDates.textContent = 'Show full dates';
+    } else {
+      restoreAllDates();
+      btnDates.textContent = 'Show years only';
+    }
+  });
+
+  btnLogos.addEventListener('click', () => {
+    logosHidden = !logosHidden;
+    document.querySelectorAll('.timeline-company img').forEach(img => {
+      img.style.display = logosHidden ? 'none' : '';
+    });
+    btnLogos.textContent = logosHidden ? 'Show logos' : 'Hide logos';
+  });
+
+  // default: condense dates and hide logos
+  condenseAllDates();
+  btnDates.textContent = 'Show full dates';
+  document.querySelectorAll('.timeline-company img').forEach(img => { img.style.display = 'none'; });
+  btnLogos.textContent = 'Show logos';
+}
