@@ -2,19 +2,21 @@
 
 // Projects list (latest -> oldest). GridStats is commented out.
 const projects = [
-	{
-		title: "meditate.com.au",
-		description: "Australia's calm, trustworthy, research-informed guide to meditation and mindfulness.",
-		githubLink: "",
-		projectLink: "https://meditate.com.au",
-		colorKey: "blue",
-	},
+	// {
+	// 	title: "meditate.com.au",
+	// 	description: "Australia's calm, trustworthy, research-informed guide to meditation and mindfulness.",
+	// 	githubLink: "",
+	// 	projectLink: "https://meditate.com.au",
+	// 	colorKey: "blue",
+	// 	status: "Work in progress",
+	// },
 	{
 		title: "Sync My Ride",
 		description: "Mobile app for organizing car meets with real-time navigation, 'follow the leader', and crew management.",
 		githubLink: "",
 		projectLink: "https://syncmyrideapp.com",
 		colorKey: "blue",
+		status: "Work in progress",
 	},
 	{
 		title: "Australian Public Interest Alliance Inc. (APIA)",
@@ -36,14 +38,15 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://mytassel.com",
 		colorKey: "green",
+		status: "Work in progress",
 	},
-	{
-		title: "Lyfbiz Solutions",
-		description: "A responsive WordPress landing page built for Lyfbiz Solutions.",
-		githubLink: "",
-		projectLink: "https://lyfbizsolutions.com",
-		colorKey: "orange",
-	},
+	// {
+	// 	title: "Lyfbiz Solutions",
+	// 	description: "A responsive WordPress landing page built for Lyfbiz Solutions.",
+	// 	githubLink: "",
+	// 	projectLink: "https://lyfbizsolutions.com",
+	// 	colorKey: "orange",
+	// },
 	{
 		title: "Finance Tracker",
 		description: "A full-stack finance dashboard that helps you track income, expenses, and investments.",
@@ -105,7 +108,10 @@ function renderProjects() {
 
 		inner.innerHTML = `
 			<div class="project-header">
-				<h3 class="project-title">${project.title}</h3>
+				<div>
+					<h3 class="project-title">${project.title}</h3>
+					${project.status ? `<span class="project-status">${project.status}</span>` : ''}
+				</div>
 				${githubIcon}
 			</div>
 			<p class="project-description">${project.description}</p>

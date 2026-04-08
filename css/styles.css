@@ -11,6 +11,7 @@
   --accent-pink-100: rgba(255,182,193,0.06);
   --accent-pink-200: rgba(255,182,193,0.12);
   --accent-pink-700: #cc6b84; /* darker for text/accessibility */
+  --purple: #8b5cf6;
   --keyword-pink-text: var(--accent-pink-700);
   /* Core text colors */
   --text-dark: #111827;
@@ -208,9 +209,8 @@ header nav {
   outline-offset: 2px;
 }
 
-/* Normalize contact button text across buttons and anchors */
 .contact-button {
-  font-weight: 200; /* ensure consistent weight across browsers */
+  font-weight: 200; 
 }
 
 .contact-button .contact-text {
@@ -408,8 +408,23 @@ header nav {
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
   margin-top: 0.5rem;
+}
+
+.project-status {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-pink-700);
+  background-color: var(--accent-pink-50);
+  border: 1px dashed var(--accent-pink-700)
 }
 
 .project-title {
@@ -534,7 +549,6 @@ header nav {
   padding-left: 0.5rem;
 }
 
-/* Make timeline content readable above the animated background */
 .timeline-item .timeline-content {
   border-radius: 8px;
   margin-top: 0.6rem;
@@ -571,7 +585,6 @@ header nav {
   font-size: 0.9rem;
 }
 
-/* Ensure timeline dates using the keyword class are visibly highlighted */
 .timeline-date.keyword,
 .timeline-date.date,
 .timeline-header .keyword.timeline-date {
@@ -710,7 +723,136 @@ header nav {
 }
 
 /* ================================
-   HERO: particles + typewriter
+   WORK IN PROGRESS BADGE
+================================ */
+.wip-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 9999;
+}
+
+.wip-badge-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  border: 2px dashed var(--purple);
+  border-radius: 1.25rem;
+  background-color: rgba(250, 245, 255, 0.98);
+}
+
+.wip-badge-gif {
+  display: block;
+  width: 82px;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.wip-badge-tooltip {
+  position: absolute;
+  left: calc(100% + 0.85rem);
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  min-width: 130px;
+  max-width: 150px;
+  padding: 0.9rem 1rem;
+  color: var(--purple);
+  border: 2px dashed var(--purple);
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: normal;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 9999;
+}
+
+.wip-badge-inner:hover .wip-badge-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.wip-mobile-btn {
+  width: 100%;
+  min-width: 180px;
+  padding: 0.75rem 1rem;
+  border: 2px dashed rgba(147, 85, 255, 0.75);
+  border-radius: 999px;
+  background: rgba(250, 245, 255, 0.98);
+  color: #5c2973;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wip-mobile-btn:hover {
+  background: rgba(243, 233, 255, 1);
+}
+
+.wip-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.wip-modal-backdrop.visible {
+  display: flex;
+}
+
+.wip-modal {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  max-width: 88vw;
+  width: 100%;
+  box-shadow: 0 16px 40px rgba(18, 24, 40, 0.12);
+  position: relative;
+  text-align: center;
+}
+
+.wip-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  color: #5c2973;
+  cursor: pointer;
+}
+
+.wip-modal-text {
+  color: #5c2973;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .wip-badge {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wip-badge-inner {
+    display: none;
+  }
+}
+
+/* ================================
+   HERO: 
 ================================ */
 .hero-canvas-wrap {
   position: fixed;
@@ -728,7 +870,6 @@ header nav {
   display: block;
 }
 
-/* ensure content sits above the full-screen canvas */
 .container {
   position: relative;
   z-index: 1;
@@ -742,7 +883,6 @@ header nav {
   opacity: 0.92;
 }
 
-/* caret for the typewriter */
 .title-anim::after {
   content: "|";
   display: inline-block;
@@ -789,22 +929,3 @@ header nav {
 .btn-ghost { background:transparent; color:var(--text-dark); border:1px solid #eee }
 .btn:focus { outline: 3px solid rgba(47,77,156,0.12); }
 
-/* ================================
-   PROJECT CARD TILT + MODAL
-================================ */
-.project-card { transform-style: preserve-3d; will-change: transform; transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease; }
-.project-card .project-inner { transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease; }
-
-.project-modal-media { width: 100%; height: 220px; background: linear-gradient(180deg, #fafafa, #fff); border-radius:8px; margin-bottom:0.8rem; display:flex; align-items:center; justify-content:center; color:var(--text-gray); border:1px solid #f0f0f0 }
-
-/* hover polish instead of tilt */
-.project-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 8px 18px 40px rgba(20,30,60,0.06); }
-.project-card:active { transform: translateY(-2px) scale(0.998); }
-
-/* small responsive tweaks */
-@media (max-width: 720px) {
-  .container { max-width: 92%; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .hero-canvas-wrap { height: 180px }
-  #hero-particles { height: 180px }
-}
