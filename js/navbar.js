@@ -78,6 +78,101 @@ function setupThemeToggle() {
   }
 }
 
+function createPasswordPromptModal(onSuccess, onCancel) {
+  if (document.getElementById("password-prompt-backdrop")) return;
+
+  const backdrop = document.createElement("div");
+  backdrop.className = "modal-backdrop";
+  backdrop.id = "password-prompt-backdrop";
+  backdrop.setAttribute("aria-hidden", "false");
+
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.innerHTML = `
+    <h3>Enter password</h3>
+    <p>Please enter the password to continue.</p>
+    <p>Hint: It's somewhere in the website.</p>
+    <label for="password-prompt-input">Password</label>
+    <input id="password-prompt-input" type="password" autocomplete="off" />
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" id="password-prompt-submit">Submit</button>
+      <button type="button" class="btn btn-ghost" id="password-prompt-cancel">Cancel</button>
+    </div>
+  `;
+
+  backdrop.appendChild(modal);
+  document.body.appendChild(backdrop);
+
+  const input = modal.querySelector("#password-prompt-input");
+  const submitButton = modal.querySelector("#password-prompt-submit");
+  const cancelButton = modal.querySelector("#password-prompt-cancel");
+
+  const closePrompt = () => {
+    backdrop.remove();
+    document.removeEventListener("keydown", handleKeydown);
+    if (typeof onCancel === "function") onCancel();
+  };
+
+  const submitPrompt = () => {
+    if (!input) return;
+    const value = input.value.trim();
+    if (value === experiencePassword) {
+      backdrop.remove();
+      document.removeEventListener("keydown", handleKeydown);
+      if (typeof onSuccess === "function") onSuccess();
+      return;
+    }
+    input.value = "";
+    input.focus();
+  };
+
+  const handleKeydown = (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closePrompt();
+    }
+    if (event.key === "Enter") {
+      event.preventDefault();
+      submitPrompt();
+    }
+  };
+
+  backdrop.addEventListener("click", (event) => {
+    if (event.target === backdrop) {
+      closePrompt();
+    }
+  });
+
+  if (submitButton) submitButton.addEventListener("click", submitPrompt);
+  if (cancelButton) cancelButton.addEventListener("click", closePrompt);
+  if (input) {
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submitPrompt();
+      }
+    });
+    input.focus();
+  }
+
+  document.addEventListener("keydown", handleKeydown);
+}
+
+function requestExperienceAccess(options = {}) {
+  createPasswordPromptModal(() => {
+    unlockExperience();
+    if (typeof options.onSuccess === "function") {
+      options.onSuccess();
+    }
+  }, () => {
+    if (typeof options.onCancel === "function") {
+      options.onCancel();
+    }
+  });
+}
+
 function isTypingField(element) {
   return !element ? false : (
     element.tagName === "INPUT" ||
@@ -104,6 +199,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  if (window.location.pathname.split("/").pop() === experiencePath && !isExperienceUnlocked()) {
+    requestExperienceAccess({
+      onCancel: () => {
+        window.location.href = "index.html";
+      },
+    });
+  }
+
   fetch("navbar.html")
     .then((response) => {
       if (!response.ok) {
@@ -123,13 +226,16 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isExperienceUnlocked()) {
               return;
             }
-            const answer = window.prompt("Password (2):");
-            if (answer === experiencePassword) {
-              unlockExperience();
-              updateExperienceTooltip(link);
-            } else {
-              event.preventDefault();
-            }
+            event.preventDefault();
+            requestExperienceAccess({
+              onSuccess: () => {
+                updateExperienceTooltip(link);
+                window.location.href = experiencePath;
+              },
+              onCancel: () => {
+                /* User cancelled the password prompt. */
+              },
+            });
           });
         }
         if (link.getAttribute("href") === currentPath) {

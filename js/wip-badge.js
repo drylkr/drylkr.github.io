@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <p class="wip-modal-hint">xp</p>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary wip-modal-close">Got it</button>
-      <button type="button" class="btn btn-ghost wip-modal-close">Close</button>
     </div>
   `;
 

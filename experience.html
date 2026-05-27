@@ -61,29 +61,6 @@
 
   </div>
 
-  <script>
-    (function() {
-      const authKey = "experienceUnlocked";
-      const expiryKey = "experienceUnlockedExpires";
-      const timeoutMs = 3 * 60 * 1000;
-      const currentPage = window.location.pathname.split("/").pop();
-      if (currentPage !== "experience.html") return;
-
-      const expiresAt = Number(sessionStorage.getItem(expiryKey));
-      const isUnlocked = expiresAt && !Number.isNaN(expiresAt) && Date.now() <= expiresAt && sessionStorage.getItem(authKey) === "true";
-      if (isUnlocked) return;
-
-      sessionStorage.removeItem(authKey);
-      sessionStorage.removeItem(expiryKey);
-      const answer = window.prompt("Enter the password to view this page:");
-      if (answer === "xp") {
-        sessionStorage.setItem(authKey, "true");
-        sessionStorage.setItem(expiryKey, String(Date.now() + timeoutMs));
-        return;
-      }
-      window.location.href = "index.html";
-    })();
-  </script>
   <script src="js/navbar.js" defer></script>
   <script src="js/footer.js" defer></script>
   <script src="js/experience.js" defer></script>

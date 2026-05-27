@@ -177,6 +177,7 @@ header nav {
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
+  text-align: left;
   padding: 0.35rem 0.75rem;
   border-radius: 0.65rem;
   background-color: rgba(20, 20, 20, 0.92);
@@ -189,6 +190,7 @@ header nav {
   text-transform: none;
   z-index: 10;
   transition: opacity 180ms ease, transform 180ms ease;
+  box-sizing: border-box;
 }
 
 .theme-toggle .theme-key {
@@ -216,6 +218,12 @@ header nav {
 :root[data-theme="dark"] .theme-toggle .theme-tooltip {
   background-color: #f5f5f5;
   color: #111827;
+}
+
+@media (max-width: 640px) {
+  .theme-toggle .theme-tooltip {
+    display: none !important;
+  }
 }
 
 :root[data-theme="dark"] .theme-toggle .theme-key {
@@ -444,6 +452,7 @@ header nav {
   font-weight: 400;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.48rem 0.72rem;
   border-radius: 0.6rem;
@@ -1151,6 +1160,23 @@ header nav {
 
 .modal h3 { margin: 0 0 0.6rem 0; font-family: 'Times New Roman', serif; font-size: 1.2rem; color: var(--wip-modal-text, var(--text-dark)); }
 .modal p { margin: 0 0 1rem 0; color: var(--text-gray); }
+.modal label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.modal input[type='password'] {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--button-border);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font: inherit;
+  margin-bottom: 1rem;
+}
 .modal .modal-actions { display:flex; gap:0.6rem; justify-content:flex-end; align-items:center; margin-top:1rem; flex-wrap:wrap; }
 .btn-primary { background: var(--accent-pink); color: var(--bg-color); }
 .btn-primary:hover { background: var(--accent-pink-700); }
@@ -1167,12 +1193,15 @@ header nav {
 
   .modal .modal-actions,
   .wip-modal .modal-actions {
-    justify-content: stretch;
+    justify-content: center;
+    gap: 0.75rem;
   }
 
   .modal .modal-actions .btn,
   .wip-modal .modal-actions .btn {
-    flex: 1 1 100%;
+    flex: 1 1 45%;
+    min-width: 9rem;
+    max-width: 12rem;
   }
 }
 
