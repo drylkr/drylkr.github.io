@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /experience.html
+
+Sitemap: https://darylkr.github.io/sitemap.xml
