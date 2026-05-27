@@ -4,17 +4,17 @@
 
 :root {
   /* General colors */
-  /* --- base palette (baby-pink preference) --- */
-  --accent-pink: #ffb6c1; /* baby pink */
-  --accent-pink-rgb: 255,182,193;
-  --accent-pink-50: rgba(235,230,233,0.04); /* very faint, grayish-pink */
-  --accent-pink-100: rgba(255,182,193,0.06);
-  --accent-pink-200: rgba(255,182,193,0.12);
-  --accent-pink-700: #cc6b84; /* darker for text/accessibility */
-  --purple: #8b5cf6;
+  /* --- base palette (red accent) --- */
+  --accent-pink: #cf0808; /* red accent */
+  --accent-pink-rgb: 207,8,8;
+  --accent-pink-50: rgba(207,8,8,0.04); /* very faint, grayish-red */
+  --accent-pink-100: rgba(207,8,8,0.06);
+  --accent-pink-200: rgba(207,8,8,0.12);
+  --accent-pink-700: #a30f0f; /* darker for text/accessibility */
+
   --keyword-pink-text: var(--accent-pink-700);
   /* Core text colors */
-  --text-dark: #111827;
+  --text-dark: #0e1013;
   --text-gray: #374151;
   --text-light-gray: #f5f5f5;
   --text-blue: var(--accent-pink-700); 
@@ -26,7 +26,7 @@
   --text-light: #777;
 
 
-  /* Keyword highlight colors (single pink palette) */
+  /* Keyword highlight colors (single red palette) */
   --keyword-bg: var(--accent-pink-200);
   --keyword-text: var(--accent-pink-700);
   --keyword-bg-light: var(--accent-pink-50);
@@ -35,8 +35,42 @@
   --hover-color: var(--accent-pink-200);
   --hover-rgb: var(--accent-pink-rgb);
   --hover-github: var(--accent-pink-700);
+  --border-color: rgba(0,0,0,0.12);
+  --button-bg: #f5f5f5;
+  --button-text: var(--text-dark);
+  --button-border: rgba(0,0,0,0.12);
+  --wip-bg: rgba(250, 245, 255, 0.98);
+  --wip-border: var(--accent-pink);
+  --wip-text: var(--accent-pink);
+  --wip-modal-bg: #fff;
+  --wip-modal-shadow: rgba(18,24,40,0.12);
 }
 
+:root[data-theme="dark"] {
+  --bg-color: #090a0f;
+  --bg-gray: #11141e;
+  --button-bg: rgba(255,255,255,0.08);
+  --button-text: var(--text-dark);
+  --button-border: rgba(255,255,255,0.16);
+  --wip-bg: rgba(255,255,255,0.08);
+  --wip-border: rgba(255,255,255,0.18);
+  --wip-text: var(--text-light-gray);
+  --wip-modal-bg: #1c1c1c;
+  --wip-modal-text: var(--text-light-gray);
+  --wip-modal-shadow: rgba(0,0,0,0.35);
+  --text-dark: #f5f7fb;
+  --text-gray: #c8d2e1;
+  --text-light: #94a3b8;
+  --accent-pink: #c64f4f;
+  --accent-pink-rgb: 198,79,79;
+  --accent-pink-700: #de5757;
+  --keyword-bg: rgba(198, 79, 79, 0.14);
+  --keyword-text: #de5757;
+  --keyword-bg-light: rgba(198, 79, 79, 0.08);
+  --hover-color: rgba(198, 79, 79, 0.12);
+  --hover-rgb: 198,79,79;
+  --border-color: rgba(255,255,255,0.16);
+}
 
 /* ================================
    GLOBAL STYLES
@@ -78,12 +112,13 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 2.4rem 0;
 }
 
 .logo {
-  background-color: black;
-  color: white;
+  background-color: var(--text-dark);
+  color: var(--bg-color);
   font-weight: 300;
   font-size: 1.2rem;
   width: 40px;
@@ -187,31 +222,32 @@ header nav {
 .contact-options {
   display: flex;
   gap: 0.7rem;
-  margin-top: 1.5rem;
 }
 .contact-button {
   font-size: 0.75rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--text-light-gray);
-  color: var(--text-dark);
+  background-color: var(--button-bg);
+  color: var(--button-text);
   text-decoration: none;
   padding: 0.48rem 0.72rem;
   border-radius: 0.6rem;
   transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid var(--button-border);
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
 }
 
-.contact-button:hover {
+.contact-button:hover,
+.see-more-btn:hover {
   background-color: var(--bg-gray);
   color: var(--text-dark);
 }
 
-.contact-button:focus {
+.contact-button:focus,
+.see-more-btn:focus {
   outline: 3px solid rgba(47,77,156,0.12);
   outline-offset: 2px;
 }
@@ -239,13 +275,13 @@ header nav {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--text-light-gray);
-  color: var(--text-dark);
+  background-color: var(--button-bg);
+  color: var(--button-text);
   text-decoration: none;
   padding: 0.48rem 0.72rem;
   border-radius: 0.6rem;
   transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid var(--button-border);
   cursor: pointer;
   font-weight: 300;
 }

@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daryl Ong - Web Portfolio</title>
+    <meta name="description" content="Daryl Ong is a software engineer building thoughtful web and mobile products, UI/UX designs, and business-ready digital experiences." />
+    <meta name="keywords" content="Daryl Ong, software engineer, web developer, mobile developer, React Native, Firebase, portfolio, UI/UX" />
+    <meta name="author" content="Daryl Ong" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffb6c1" />
+    <meta property="og:title" content="Daryl Ong – Web Portfolio" />
+    <meta property="og:description" content="Software engineer building thoughtful web and mobile experiences with React Native, Firebase, and polished UI/UX." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://darylkr.github.io/" />
+    <link rel="canonical" href="https://darylkr.github.io/" />
+    <script>
+      (function() {
+        const saved = localStorage.getItem('site-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.dataset.theme = saved;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -128,8 +148,8 @@
   <script src="js/navbar.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/projects.js"></script>
-  <script src="js/hero.js"></script>
   <script src="js/contact.js"></script>
   <script src="js/wip-badge.js"></script>
+  <script src="js/about-toggle.js"></script>
 </body>
 </html>
