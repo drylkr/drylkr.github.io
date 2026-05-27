@@ -448,10 +448,6 @@ header nav {
     align-items: stretch;
   }
 
-  .tech-marquee-track .tech-item[aria-hidden="true"] {
-    display: none;
-  }
-
   .about-name {
     font-size: 1.2rem;
     line-height: 1.05;
@@ -1043,12 +1039,12 @@ header nav {
 }
 
 .modal {
-  background: #fff;
+  background: var(--wip-modal-bg);
   border-radius: 12px;
   padding: 1.1rem 1.2rem;
   max-width: 640px;
   width: calc(100% - 2rem);
-  box-shadow: 0 12px 40px rgba(18, 24, 40, 0.12);
+  box-shadow: 0 12px 40px var(--wip-modal-shadow);
   font-family: inherit;
   transition: transform 220ms cubic-bezier(.2,.9,.2,1), opacity 180ms ease;
   transform: translateY(6px);
@@ -1058,11 +1054,11 @@ header nav {
   transform: translateY(0);
 }
 
-.modal h3 { margin: 0 0 0.6rem 0; font-family: 'Times New Roman', serif; font-size: 1.2rem; color: var(--text-dark); }
+.modal h3 { margin: 0 0 0.6rem 0; font-family: 'Times New Roman', serif; font-size: 1.2rem; color: var(--wip-modal-text, var(--text-dark)); }
 .modal p { margin: 0 0 1rem 0; color: var(--text-gray); }
 .modal .modal-actions { display:flex; gap:0.6rem; justify-content:flex-end; align-items:center; }
 .btn { padding:0.5rem 0.8rem; border-radius:8px; border:0; cursor:pointer; font-weight:600 }
 .btn-primary { background:var(--text-blue); color:white }
-.btn-ghost { background:transparent; color:var(--text-dark); border:1px solid #eee }
+.btn-ghost { background:transparent; color:var(--text-dark); border:1px solid rgba(0,0,0,0.12) }
 .btn:focus { outline: 3px solid rgba(47,77,156,0.12); }
 
