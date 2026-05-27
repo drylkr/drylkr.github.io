@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.createElement("div");
   modal.className = "wip-modal";
   modal.innerHTML = `
-    <h3>Work in progress 🚧</h3>
-    <p class="wip-modal-text">Check back soon for updates~ :3</p>
+    <h3>Work in progress</h3>
+    <p class="wip-modal-text">Swing by again soon for updates, things change around here.</p>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary wip-modal-close">Got it</button>
       <button type="button" class="btn btn-ghost wip-modal-close">Close</button>
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     badge.innerHTML = `
       <button type="button" class="wip-badge-inner" aria-label="Work in progress">
         <img class="wip-badge-gif" src="assets/car.gif" alt="Work in progress car" />
-        <div class="wip-badge-tooltip">Check back soon for updates~ :3</div>
+        <div class="wip-badge-tooltip">Swing by again soon for updates</div>
       </button>
     `;
   }
