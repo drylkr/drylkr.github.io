@@ -142,7 +142,6 @@ experiences.forEach(exp => {
   container.appendChild(item);
 });
 
-  // Simple reveal on scroll for timeline items
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('in-view');

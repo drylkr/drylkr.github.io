@@ -1,4 +1,4 @@
-// Using a single pink theme for keyword/project accents — colorKey is unused.
+// Using a single color theme for keyword/project accents — colorKey is unused.
 
 // Projects list (latest -> oldest). GridStats is commented out.
 const projects = [
