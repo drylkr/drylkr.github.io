@@ -1016,7 +1016,7 @@ header nav {
   min-width: 130px;
   max-width: 150px;
   padding: 0.9rem 1rem;
-  color: var(--text-gray);
+  color: var(--accent-pink);
   border: 2px dashed var(--accent-pink-700);
   border-radius: 1rem;
   background-color: var(--bg-gray);
@@ -1137,8 +1137,10 @@ header nav {
   inset: 0;
   background: rgba(0,0,0,0.45);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding: 1.2rem 1rem;
+  overflow-y: auto;
   z-index: 9999;
 }
 
@@ -1148,6 +1150,7 @@ header nav {
   padding: 1.6rem 1.8rem;
   width: min(92vw, 24rem);
   max-width: 24rem;
+  max-height: calc(100vh - 2.4rem);
   box-shadow: 0 12px 40px var(--wip-modal-shadow);
   font-family: inherit;
   transition: transform 220ms cubic-bezier(.2,.9,.2,1), opacity 180ms ease;

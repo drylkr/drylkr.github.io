@@ -155,6 +155,7 @@ function createPasswordPromptModal(onSuccess, onCancel) {
       }
     });
     input.focus();
+    input.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }
 
   document.addEventListener("keydown", handleKeydown);
