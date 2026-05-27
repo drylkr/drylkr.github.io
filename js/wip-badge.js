@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.innerHTML = `
     <h3>Work in progress</h3>
     <p class="wip-modal-text">Swing by again soon for updates, things change around here.</p>
+    <p class="wip-modal-hint">xp</p>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary wip-modal-close">Got it</button>
       <button type="button" class="btn btn-ghost wip-modal-close">Close</button>
@@ -26,16 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
     modalBackdrop.setAttribute("aria-hidden", "false");
   };
 
+  const videoEl = `
+    <video class="wip-badge-gif" autoplay loop muted playsinline preload="none" width="82" height="88" aria-hidden="true">
+      <source src="assets/car.webm" type="video/webm" />
+      <source src="assets/car.mp4" type="video/mp4" />
+    </video>
+  `;
+
   if (isMobile) {
     badge.innerHTML = `
       <button type="button" class="wip-badge-inner wip-badge-mobile" aria-label="Work in progress">
-        <img class="wip-badge-gif" src="assets/car.gif" alt="Work in progress car" />
+        ${videoEl}
       </button>
     `;
   } else {
     badge.innerHTML = `
       <button type="button" class="wip-badge-inner" aria-label="Work in progress">
-        <img class="wip-badge-gif" src="assets/car.gif" alt="Work in progress car" />
+        ${videoEl}
         <div class="wip-badge-tooltip">Swing by again soon for updates</div>
       </button>
     `;

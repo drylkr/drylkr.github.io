@@ -23,6 +23,7 @@
         }
       })();
     </script>
+    <link rel="preload" as="fetch" href="navbar.html" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -50,10 +51,33 @@
 
   </div>
 
-  <script src="js/navbar.js"></script>
-  <script src="js/footer.js"></script>
-  <script src="js/experience.js"></script>
-  <script src="js/contact.js"></script>
-  <script src="js/wip-badge.js"></script>
+  <script>
+    (function() {
+      const authKey = "experienceUnlocked";
+      const expiryKey = "experienceUnlockedExpires";
+      const timeoutMs = 3 * 60 * 1000;
+      const currentPage = window.location.pathname.split("/").pop();
+      if (currentPage !== "experience.html") return;
+
+      const expiresAt = Number(sessionStorage.getItem(expiryKey));
+      const isUnlocked = expiresAt && !Number.isNaN(expiresAt) && Date.now() <= expiresAt && sessionStorage.getItem(authKey) === "true";
+      if (isUnlocked) return;
+
+      sessionStorage.removeItem(authKey);
+      sessionStorage.removeItem(expiryKey);
+      const answer = window.prompt("Enter the password to view this page:");
+      if (answer === "xp") {
+        sessionStorage.setItem(authKey, "true");
+        sessionStorage.setItem(expiryKey, String(Date.now() + timeoutMs));
+        return;
+      }
+      window.location.href = "index.html";
+    })();
+  </script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/experience.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/wip-badge.js" defer></script>
 </body>
 </html>

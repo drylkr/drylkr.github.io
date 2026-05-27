@@ -24,6 +24,7 @@
         }
       })();
     </script>
+    <link rel="preload" as="fetch" href="navbar.html" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -36,14 +37,34 @@
 
     <!-- About Section -->
     <section class="about">
-      <h1 class="about-name">Hello, I'm Daryl Ong</h1>
+      <h1 class="about-name">Hello, I'm Daryl Ong</h1> 
       
       <div class="about-description">
-        <p class="about-lead">I’m a <span class="keyword pink keyword-pink">full-stack developer</span> drawn to how systems work, from <span class="keyword pink keyword-pink">web apps</span> and <span class="keyword pink keyword-pink">analytics</span> to the <span class="keyword pink keyword-pink">security</span> layers underneath them. I’m still figuring out where it all leads, but I like <span class="keyword pink keyword-pink">building things</span>, understanding <span class="keyword pink keyword-pink">systems</span>, and staying curious about how <span class="keyword pink keyword-pink">people</span> and <span class="keyword pink keyword-pink">technology</span> connect. <button class="about-toggle" id="about-toggle" aria-expanded="false" aria-controls="about-more">+ more about me</button></p>
+        <p class="about-lead">I’m a <span class="keyword pink">full-stack developer</span> drawn to how systems work, from <span class="keyword pink">web apps</span> and <span class="keyword pink">analytics</span> to the <span class="keyword pink">security</span> layers underneath them. <button class="about-toggle" id="about-toggle" aria-expanded="false" aria-controls="about-more">+ read more about me</button></p>
+
         <div class="about-more" id="about-more">
-          <p>I started with <span class="keyword pink keyword-pink">web development</span>, but over time I’ve found myself going deeper into <span class="keyword pink keyword-pink">analytics</span>, <span class="keyword pink keyword-pink">SEO</span>, and <span class="keyword pink keyword-pink">cybersecurity</span>, trying to understand not just how products are built, but how they are used, measured, and protected.</p>
-          <p>Outside of tech, I usually reset with things that keep my hands busy like <span class="keyword pink keyword-pink">music</span> or <span class="keyword pink keyword-pink">small creative projects</span>. I also enjoy occasional <span class="keyword pink keyword-pink">gaming</span> with friends & family and spending time thinking about <span class="keyword pink keyword-pink">psychology</span> and <span class="keyword pink keyword-pink">health tech</span> when something catches my interest.</p>
-        </div>
+
+          <p>
+            My tech journey started at thirteen on Tumblr, where I spent an unreasonable amount of time customizing themes, adding music players, and making entire pages sparkle for no practical reason.
+          </p>
+
+          <p>
+            I accidentally got into tech in high school after ditching a cooking class because my friends ended up elsewhere. Someone said there were open slots in a computer class and I went, “sure.” That random decision somehow turned into studying hardware/software servicing, joining Microsoft DigiGirlz, and eventually pursuing Computer Engineering.
+          </p>
+
+          <p>
+            I also went through a harmless “script kiddie” phase writing prank scripts for friends. Nothing destructive, mostly just enough chaos to make someone question why their desktop suddenly started talking.
+          </p>
+
+          <p>
+            Outside of tech, I collect hobbies like side quests: playlists, painting, occasional piano/guitar sessions, and convincing people to download Brawl Stars. I’ve recruited three friends so far, which might be my greatest achievement in tech.
+          </p>
+
+          <p>
+            Looking back, it’s funny that this all started with a Tumblr phase and one impulsive class switch. I’m still figuring things out, but I’ve realized I really enjoy building things that sit somewhere between systems, creativity, and problem-solving.
+          </p>
+
+      </div>
       </div>
 
       <!-- Contact Buttons -->
@@ -55,7 +76,7 @@
             2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
             4-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          <span class="contact-text">Contact</span>
+          <span class="contact-text">Let's talk</span>
         </button>
 
         <!-- GitHub -->
@@ -125,42 +146,60 @@
     <section class="projects" data-mode="highlight" data-highlight="Sync My Ride, meditate.com.au, Australian Public Interest Alliance Inc. (APIA)">
         <div class="section-header">
           <h2 class="section-title">Projects</h2>
-          <a href="/projects.html" class="see-more-btn">View More</a>
+          <a href="/projects.html" class="see-more-btn">+ view more projects</a>
         </div>
 
       <div class="projects-grid"></div>
     </section>
 
-    <!-- Highlight -->
-     <!-- <section class="highlight">
-        <div class="highlight-row">
+    <!-- Opportunities Section -->
+    <section class="dropdown-section">
+      <h2 class="section-title">Open to Internships &amp; Volunteer Work</h2>
 
-          <svg class="icon-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="infoTitle2">
-            <title id="infoTitle2">Info</title>
-            <path fill="none" stroke="var(--accent-pink-700)" stroke-width="1.6" d="M12 2.5
-              A9.5 9.5 0 1 1 12 21.5 9.5 9.5 0 1 1 12 2.5z"/>
-            <rect x="11" y="10" width="2" height="6" fill="var(--accent-pink-700)"/>
-            <circle cx="12" cy="8" r="1" fill="var(--accent-pink-700)"/>
-          </svg>
+      <div class="about-description">
+        <p class="about-lead">
+          I’m open to <span class="keyword pink">internships</span> and <span class="keyword pink">volunteer opportunities</span>.
+          <button class="about-toggle" id="opp-toggle" aria-expanded="false" aria-controls="opp-more">+ read more</button>
+        </p>
 
-          <p class="highlight-description">
-            I'm always open to collaborating and connecting.
+        <div class="about-more" id="opp-more">
+
+        <p><strong>Technical Interests</strong></p>
+        <ul>
+          <li>Web development, automation, and systems improvement</li>
+          <li>QA engineering and test automation (SDET interest)</li>
+          <li>DevOps and infrastructure</li>
+          <li>Data analytics and reporting systems</li>
+          <li>Security fundamentals (IAM, cloud security exploration)</li>
+          <li>Marketing systems and operations tools</li>
+        </ul>
+
+          <p><strong>Areas of Interest</strong></p>
+          <ul>
+            <li>Mental health and education initiatives</li>
+            <li>Arts, music, and creative projects</li>
+            <li>Nonprofits and community-driven work</li>
+            <li>Research, learning, and technology</li>
+          </ul>
+
+          <p>
+            <strong>Remote or hybrid preferred.</strong>
           </p>
 
         </div>
-     </section> -->
-
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer"></footer>
 
   </div>
 
-  <script src="js/navbar.js"></script>
-  <script src="js/footer.js"></script>
-  <script src="js/projects.js"></script>
-  <script src="js/contact.js"></script>
-  <script src="js/wip-badge.js"></script>
-  <script src="js/about-toggle.js"></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/wip-badge.js" defer></script>
+  <script src="js/about-toggle.js" defer></script>
 </body>
 </html>
