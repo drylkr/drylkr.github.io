@@ -2,13 +2,19 @@
   <div class="logo">DO</div>
   <ul class="nav-links">
     <li><a href="index.html" class="nav-link">/index</a></li>
-    <!-- <li><a href="experience.html" class="nav-link">experience</a></li> -->
+    <li>
+      <a href="experience.html" class="nav-link nav-link-locked" data-locked="true">
+        experience
+        <span class="nav-lock-tooltip">Password protected</span>
+      </a>
+    </li>
     <li><a href="projects.html" class="nav-link">projects</a></li>
   </ul>
   <div class="nav-actions">
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode">
-      <img class="icon-sun" src="https://img.icons8.com/ios-filled/50/000000/sun--v1.png" alt="Light mode" aria-hidden="true" />
-      <img class="icon-moon" src="https://img.icons8.com/ios-filled/50/000000/crescent-moon.png" alt="Dark mode" aria-hidden="true" />
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode" title="Toggle theme (D)">
+      <img class="icon-sun" src="https://img.icons8.com/ios-filled/50/000000/sun--v1.png" alt="Light mode" aria-hidden="true" width="24" height="24" />
+      <img class="icon-moon" src="https://img.icons8.com/ios-filled/50/000000/crescent-moon.png" alt="Dark mode" aria-hidden="true" width="24" height="24" />
+      <span class="theme-tooltip">Toggle theme <span class="theme-key">D</span></span>
     </button>
   </div>
 </nav>
