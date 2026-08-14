@@ -7,8 +7,6 @@ const projects = [
 		description: "Australia’s calm, research-informed guide to meditation and mindfulness.",
 		projectLink: "https://meditate.com.au",
 		colorKey: "blue",
-		status: "Work in progress",
-		statusShort: "In progress",
 	},
 	{
 		title: "Sync My Ride",
@@ -16,8 +14,6 @@ const projects = [
 		githubLink: "",
 		projectLink: "https://syncmyrideapp.com",
 		colorKey: "blue",
-		status: "Work in progress",
-		statusShort: "In progress",
 	},
 	{
 		title: "Australian Public Interest Alliance Inc. (APIA)",

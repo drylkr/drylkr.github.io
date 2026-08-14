@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.innerHTML = `
     <h3>Work in progress</h3>
     <p class="wip-modal-text">Swing by again soon for updates, things change around here.</p>
-    <p class="wip-modal-hint">xp</p>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary wip-modal-close">Got it</button>
     </div>
