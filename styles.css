@@ -1,0 +1,33 @@
+:root {
+    --background: #fffbf7;
+    --text-primary: #333333;
+    --text-secondary: #222222;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+p {
+  font-size: clamp(0.8rem, 5vw + 1rem, 0.9rem); 
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--text-secondary);
+}
+
+h1 {
+  /* Syntax: clamp(minimum_size, preferred_dynamic_size, maximum_size) */
+  font-size: clamp(1rem, 5vw + 1rem, 2.3rem); 
+  line-height: 1.2;
+}
+
+/* About */
+.about {
+    text-align: center;
+    margin: 7rem 0rem;
+}
